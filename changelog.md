@@ -25,18 +25,18 @@ Asegúrate de tener lo siguiente antes de comenzar:
 
 
 
-### Inicializar el proyecto (si aún no existe package.json)
+### 2️⃣ Inicializar el proyecto (si aún no existe package.json)
 
 - npm init -y
 
 
-### Instalar las dependencias necesarias
+### 3️⃣ Instalar las dependencias necesarias
 - npm install express multer cors
 
-### (Opcional) Instalar nodemon para reinicio automático del servidor
+### 4️⃣ (Opcional) Instalar nodemon para reinicio automático del servidor
 - npm install --save-dev nodemon
 
-### Configurar script de inicio en package.json
+### 5️⃣ Configurar script de inicio en package.json
 - "scripts": {
     "start": "nodemon server.js"
   }
@@ -50,3 +50,24 @@ Asegúrate de tener lo siguiente antes de comenzar:
   http://localhost:3000
 
 
+
+
+### 🧩 Funcionamiento
+## 🎛 Interfaz de Usuario
+
+- Muestra un video en vivo de tu cámara web.
+- Botón "📸 Tomar foto" para capturar una imagen del video.
+
+### 🎯 Proceso de Captura
+- Al hacer clic en el botón, se congela el frame actual del video.
+
+- Se muestra una vista previa en la misma página.
+
+La imagen es enviada automáticamente al servidor.
+
+### 🖥️ Lado del Servidor
+- Recibe la imagen vía POST y la guarda en la carpeta uploads/.
+
+- Asigna un nombre único a cada imagen usando la hora actual (timestamp).
+
+- Ejemplo: foto_1623456789.png
