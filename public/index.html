@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cámara Web</title>
+</head>
+<body>
+    <h1>Capturar foto con la cámara del PC</h1>
+    
+    <!-- Mostrar video en vivo -->
+    <video id="video" autoplay playsinline width="640" height="480" style="border:1px solid #ccc;"></video>
+    
+    <br />
+    
+    <!-- Botón para tomar la foto -->
+    <button id="snap">📸 Tomar foto</button>
+    
+    <!-- Canvas oculto para capturar y procesar la imagen -->
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    
+    <br />
+    
+    <h3>Vista previa:</h3>
+    
+    <!-- Imagen para mostrar la foto tomada -->
+    <img id="preview" style="border:1px solid #ccc;" width="640" height="480" />
+    
+    <script src="script.js"></script>
+  </body>
+  
+</html>
