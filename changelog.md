@@ -20,7 +20,7 @@ Asegúrate de tener lo siguiente antes de comenzar:
 ### 1️⃣ Clonar el repositorio
 
 - git clone https://github.com/DarkXz7/tomarFotoNode.git
-- cd tomarFotoNode
+
 
 
 
