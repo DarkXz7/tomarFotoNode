@@ -1,86 +1,87 @@
+🛠 Requisitos
+✅ Node.js v14 o superior
 
----
+✅ Navegador moderno (Chrome, Firefox, Edge, Safari)
 
-## 🛠 Requisitos
+✅ Cámara web habilitada (en PC o móvil)
 
-- ✅ Node.js v14 o superior
-- ✅ Navegador moderno (Chrome, Firefox, Edge, Safari)
-- ✅ Cámara web habilitada (en PC o móvil)
-- ✅ Permitir permisos de cámara en el navegador
+✅ Permitir permisos de cámara en el navegador
 
----
-
-## 🚀 Pasos para instalar y ejecutar
-
-### 1. Clonar el repositorio
-```bash
+🚀 Pasos para instalar y ejecutar
+1. Clonar el repositorio
+bash
+Copiar
+Editar
 git clone https://github.com/DarkXz7/tomarFotoNode.git
-
-
-
-### 2 Inicializa el proyecto (si aún no tiene package.json):
+cd tomarFotoNode
+2. Inicializar el proyecto (si aún no tiene package.json)
+bash
+Copiar
+Editar
 npm init -y
-
-### Instala las dependencias necesarias:
+3. Instalar las dependencias necesarias
+bash
+Copiar
+Editar
 npm install express multer cors
-
-
-### Si se necesita que el servidor se reinicie automáticamente cuando se editen archivos:
+4. (Opcional) Instalar nodemon para reiniciar el servidor automáticamente al editar archivos
+bash
+Copiar
+Editar
 npm install --save-dev nodemon
-
-
-### En package.json, agregar este script:
+5. Agregar el script de inicio en package.json
+json
+Copiar
+Editar
 "scripts": {
   "start": "nodemon server.js"
 }
+6. Iniciar el servidor
+bash
+Copiar
+Editar
+npm start
 
-### Inicia el servidor:
 
-
-node server.js
-
-
-### Abre tu navegador y navega a:
-
+🌐 Acceder a la aplicación
+Abre tu navegador y visita:
 http://localhost:3000
 
-
-
-### Funcionamiento
-### Interfaz de Usuario:
-
-La página muestra un video en vivo de tu cámara web.
+🎯 Funcionamiento
+Interfaz de Usuario
+Muestra un video en vivo de tu cámara web.
 
 Botón "📸 Tomar foto" para capturar la imagen.
 
-### Proceso de Captura:
-
-Al hacer clic en el botón:
-
-Se congela el frame actual del video.
+Proceso de Captura
+Al hacer clic en el botón, se congela el frame actual del video.
 
 Se muestra una vista previa.
 
 La imagen se envía automáticamente al servidor.
 
-### Servidor:
-
+Lado del Servidor
 Recibe la imagen y la guarda en la carpeta uploads/.
 
-Asigna un nombre único a cada foto (ej: foto_1623456789.png).
+Asigna un nombre único a cada foto (ejemplo: foto_1623456789.png).
 
-### Detalles Técnicos
+🧠 Detalles Técnicos
 Frontend (script.js)
-Acceso a la cámara: Usa navigator.mediaDevices.getUserMedia().
+Acceso a la cámara:
+Usa navigator.mediaDevices.getUserMedia().
 
-Captura de foto: Dibuja el frame actual del video en un canvas oculto.
+Captura de la foto:
+Dibuja el frame actual del video en un canvas oculto.
 
-Envío al servidor: Convierte el canvas a Blob y lo envía mediante Fetch API.
+Envío al servidor:
+Convierte el canvas a Blob y lo envía mediante fetch.
 
-### Backend (server.js)
+Backend (server.js)
 Configuración de Multer:
 
-### javascript
+javascript
+Copiar
+Editar
 const storage = multer.diskStorage({
   destination: 'uploads/',
   filename: (req, file, cb) => {
@@ -90,8 +91,9 @@ const storage = multer.diskStorage({
 Ruta para subir fotos:
 
 javascript
+Copiar
+Editar
 app.post('/upload', upload.single('photo'), (req, res) => {
   if (!req.file) return res.status(400).send('No se recibió archivo');
   res.send('Foto guardada correctamente');
 });
-
