@@ -19,9 +19,34 @@ Asegúrate de tener lo siguiente antes de comenzar:
 
 ### 1️⃣ Clonar el repositorio
 
-```bash
-git clone https://github.com/DarkXz7/tomarFotoNode.git
-cd tomarFotoNode
+- git clone https://github.com/DarkXz7/tomarFotoNode.git
+- cd tomarFotoNode
 
-```markdown
-## Este título sí se verá como título
+
+
+
+### Inicializar el proyecto (si aún no existe package.json)
+
+- npm init -y
+
+
+### Instalar las dependencias necesarias
+- npm install express multer cors
+
+### (Opcional) Instalar nodemon para reinicio automático del servidor
+- npm install --save-dev nodemon
+
+### Configurar script de inicio en package.json
+- "scripts": {
+    "start": "nodemon server.js"
+  }
+
+
+### 6️⃣ Iniciar el servidor
+  node server.js
+
+### 🌐 Acceder a la aplicación
+- Una vez iniciado el servidor, abre tu navegador en:
+  http://localhost:3000
+
+
